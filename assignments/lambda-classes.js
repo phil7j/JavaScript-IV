@@ -23,6 +23,9 @@ class Instructor extends Person {
     grade(student, subject){
         return `${student.name} receives a perfect score on ${subject}`;
     }
+    correctAssignment(student){
+        student.grade = student.grad + Math.random * 10
+    }
 }
 
 class Student extends Person {
@@ -31,6 +34,7 @@ class Student extends Person {
         this.previousBackground = attr.previousBackground;
         this.className = attr.className;
         this.favSubjects = attr.favSubjects;
+        this.grade = attr.grade;
     }
     listSubjects(){
          return this.favSubjects.map(subject=> subject );
@@ -98,7 +102,8 @@ const jimmy = new Student({
     location: 'Missoula',
     previousBackground: 'Barista',
     className: 'Web75',
-    favSubjects: ['Node.js', 'Javascript']
+    favSubjects: ['Node.js', 'Javascript'],
+    grade: 80
 });
 
 const susan = new Student({
@@ -107,7 +112,8 @@ const susan = new Student({
     location: 'New York',
     previousBackground: 'Florist',
     className: 'DS4',
-    favSubjects: ['Python', 'Machine Learning']
+    favSubjects: ['Python', 'Machine Learning'],
+    grade: 76
 });
 
 // Project Managers
